@@ -7,17 +7,6 @@ import argparse
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
 
-def ascii_art():
-    print('''
-____________________________________________________________________________________________________________________
-  _      _                                              _     _                                                     
-  |  |  /            /            ,                     /    /                                                      
---|-/|-/------__----/__----__--------_/_-----__--------/___ /------__----)__-----------__----__---_/_-----__----)__-
-  |/ |/     /___)  /   )  (_ `  /    /     /___)      /    /     /   )  /   )  | /   /___)  (_ `  /     /___)  /   )
-__/__|_____(___ __(___/__(__)__/____(_ ___(___ ______/____/_____(___(__/_______|/___(___ __(__)__(_ ___(___ __/_____
-                                                                                                                    
-        ''')
-
 def get_page_content(url):
     try:
         response = requests.get(url, headers={'User-Agent': USER_AGENT})
@@ -142,8 +131,6 @@ if __name__ == "__main__":
         exit()
 
     if args.file:
-        ascii_art()
-
         domains = read_url_from_file(args.file)
         if not domains:
             print("No URL found in the file.")
